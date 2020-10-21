@@ -1,11 +1,11 @@
-# React-Food-Menu
-Food-Menu is a React web application where you can navigate the details of the different food items by clicking on the list on the menu. It has the filter functionality with which you can filter your food with different categories.
+# React-Tasty-Menu
+Tasty-Menu is a React web application where you can navigate the details of the different food items by clicking on the list on the menu. It has the filter functionality with which you can filter your food with different categories.
 
 ## snapshot
-![Food-Menu]()
+![Tasty-Menu]()
 
 ## live demo
-[Food-Menu app]()
+[Tasty-Menu app]()
 
 ## Video Presentation
 
@@ -41,12 +41,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Setup
 
-- git clone `https://github.com/taiwocoker/React-Food-Menu.git`
-- cd React-Food-Menu
+- git clone `https://github.com/taiwocoker/React-Tasty-Menu.git`
+- cd React-Tasty-Menu
 - run npm install
 - run npm run start
 
-## Authors
+## Author
 
 👤 **Taiwo Coker**
 
@@ -59,7 +59,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/taiwocoker/React-Food-Menu/issues).
+Feel free to check the [issues page](https://github.com/taiwocoker/React-Tasty-Menu/issues).
 
 ## Show your support
 
@@ -67,6 +67,6 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- MIcroverse
-- Microverse TSE's
+- Microverse
+- Microverse TSEs
 
