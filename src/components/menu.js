@@ -6,17 +6,20 @@ import '../styles/index.css'
 const Menu = ({menu}) => {
  const {idCategory, strCategory, strCategoryThumb, strCategoryDescription} = menu
  return (
-  <>
-  <main>
-   <section>
-    <div>
-     <img src={strCategoryThumb} alt="image"/>
- <h4>{strCategory}</h4>
- <p>{strCategoryDescription}</p>
-    </div>
-   </section>
-  </main>
-  </>
+   <>
+     <article className='cocktail'>
+       <div className='img-container'>
+         <img src={strCategoryThumb} alt='image' />
+       </div>
+       <div className='cocktail-footer'>
+         <h3>{strCategory}</h3>
+         {/* <p>{strCategoryDescription}</p> */}
+         <Link to={`/menu/${idCategory}`} className='btn btn-primary btn-details'>
+           details
+         </Link>
+       </div>
+     </article>
+   </>
  )
  }
 

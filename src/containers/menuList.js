@@ -10,20 +10,18 @@ const MenuList = ({ getMenus, menus }) => {
   }, [])
   console.log(menus)
 
-  return menus === null? <h1>Loading...</h1> : (
-    <div>
-      <main>
-        <section className='menu-section'>
-          <div className='title'>
-            <h2>Our Menu</h2>
-            <div className='underline'></div>
-            {menus.map((menu) => (
-              <Menu menu={menu} key={menu.idCategory} />
-            ))}
-          </div>
-        </section>
-      </main>
-    </div>
+  return menus === null ? (
+    <h1>Loading...</h1>
+  ) : (
+    <section className='section'>
+      <h2 className='section-title'>Our Menu</h2>
+      <div className='underline'></div>
+      <div className='meals-center'>
+        {menus.map((menu) => (
+          <Menu menu={menu} key={menu.idCategory} />
+        ))}
+      </div>
+    </section>
   )
 }
 

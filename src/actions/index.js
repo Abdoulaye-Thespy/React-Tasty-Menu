@@ -2,7 +2,6 @@ import axios from 'axios'
 import { GET_MENUS, GET_MENU, CHANGE_FILTER } from '../constants/actionTypes'
 
 // const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
-
 export const getMenus = () => async (dispatch) => {
   try {
     const allMenu = await axios.get(
@@ -28,7 +27,7 @@ export const getMenu = (id) => async (dispatch) => {
     )
     dispatch({
       type: GET_MENU,
-      payload: res.data,
+      payload: res.data.categories,
     })
   } catch (err) {
     dispatch({
