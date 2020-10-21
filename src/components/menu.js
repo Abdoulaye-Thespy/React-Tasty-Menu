@@ -4,13 +4,19 @@ import PropTypes from 'prop-types'
 import '../styles/index.css'
 
 const Menu = ({menu}) => {
- const {id, name, img, desc} = menu;
+ const {idCategory, strCategory, strCategoryThumb, strCategoryDescription} = menu
  return (
-  <div>
-  <img src={img} alt="image"/>
- <div>{name}</div>
- <div>{desc}</div>
- </div>
+  <>
+  <main>
+   <section>
+    <div>
+     <img src={strCategoryThumb} alt="image"/>
+ <h4>{strCategory}</h4>
+ <p>{strCategoryDescription}</p>
+    </div>
+   </section>
+  </main>
+  </>
  )
  }
 

@@ -8,20 +8,15 @@ export const getMenus = () => async (dispatch) => {
     const allMenu = await axios.get(
       'https://www.themealdb.com/api/json/v1/1/categories.php'
     )
-    console.log(allMenu)
-    const menuData = await Promise.all(
-      allMenu.data.results.map(async (menu) => {
-        // const menuRecord = await axios.get(menu.meals)
-        // return menuRecord.data
-      })
-    )
+
     dispatch({
       type: GET_MENUS,
-      payload: menuData,
+      payload: allMenu.data.categories,
     })
   } catch (err) {
     dispatch({
-      err,
+      type: GET_MENUS,
+      payload: [],
     })
   }
 }
@@ -37,7 +32,8 @@ export const getMenu = (id) => async (dispatch) => {
     })
   } catch (err) {
     dispatch({
-      err,
+      type: GET_MENU,
+      payload: [],
     })
   }
 }
