@@ -1,11 +1,11 @@
 import menuApi from '../api'
 
 const mealsApi = '1'
-export const setMenus = () => async (dispatch) => {
+export const getMenus = () => async (dispatch) => {
   const response = await menuApi.get(
     `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
   )
-  dispatch({ type: 'SET_MENUS', Menus: response.data })
+  dispatch({ type: 'GET_MENUS', Menus: response.data })
 
   // const sources = response.data.articles.map((stock) => stock.source.name)
 

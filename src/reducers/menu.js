@@ -1,6 +1,6 @@
 const menuReducer = (state = [], action) => {
   switch (action.type) {
-    case 'SET_BOOKS':
+    case 'GET_MENUS':
       return action.menus
     default:
       return state

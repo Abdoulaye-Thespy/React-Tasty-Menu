@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import MenuList from '../containers/MenuList'
-import ShowMenu from '../containers/ShowMenu'
+import MenuList from './containers/MenuList';
+import ShowMenu from './containers/ShowMenu';
 
 import '../styles/index.css'
 
