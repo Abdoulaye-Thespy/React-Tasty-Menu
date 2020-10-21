@@ -1,18 +1,33 @@
-import menuApi from '../api'
+import axios from axios;
+import React, {useState, useEffect} from 'react'
 
-const mealsApi = '1'
-export const getMenus = () => async (dispatch) => {
-  const response = await menuApi.get(
-    `https://www.themealdb.com/api/json/v1/1/search.php?s=${name}`
-  )
-  dispatch({ type: 'GET_MENUS', Menus: response.data })
+const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
 
-  // const sources = response.data.articles.map((stock) => stock.source.name)
+export const getMenus = () => dispatch => axios.get(apiUrl)
+  .then(response => response.data)
+  .then(data => {
+    dispatch({
+      type: 'GET_MENUS',
+      payload: data,
+    });
+  })
+  .catch(error => {
+    throw (error);
+  });
 
-  // const unique = [...new Set(sources)]
-  // dispatch({ type: 'SET_FILTERS', filters: unique })
-}
-export const changeFilter = (filter) => ({
+  export const getMenu = id => dispatch => axios.get(`${apiUrl}/${id}`)
+  .then(response => response.data)
+  .then(data => {
+    dispatch({
+      type: 'GET_MENU',
+      payload: data,
+    });
+  })
+  .catch(error => {
+    throw (error);
+  });
+
+  export const changeFilter = filter => ({
   type: CHANGE_FILTER,
   filter,
-})
+});
