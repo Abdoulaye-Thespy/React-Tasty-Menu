@@ -1,3 +1,4 @@
+import { GET_MENUS, GET_MENU } from '../constants/actionTypes'
 const initialState = {
   menus: [],
   menu: {},

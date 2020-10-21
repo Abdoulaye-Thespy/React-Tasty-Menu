@@ -1,33 +1,48 @@
-import axios from axios;
-import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import { GET_MENUS, GET_MENU, CHANGE_FILTER } from '../constants/actionTypes'
 
-const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
+// const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
 
-export const getMenus = () => dispatch => axios.get(apiUrl)
-  .then(response => response.data)
-  .then(data => {
+export const getMenus = () => async (dispatch) => {
+  try {
+    const allMenu = await axios.get(
+      'https://www.themealdb.com/api/json/v1/1/categories.php'
+    )
+    console.log(allMenu)
+    const menuData = await Promise.all(
+      allMenu.data.results.map(async (menu) => {
+        // const menuRecord = await axios.get(menu.meals)
+        // return menuRecord.data
+      })
+    )
     dispatch({
-      type: 'GET_MENUS',
-      payload: data,
-    });
-  })
-  .catch(error => {
-    throw (error);
-  });
-
-  export const getMenu = id => dispatch => axios.get(`${apiUrl}/${id}`)
-  .then(response => response.data)
-  .then(data => {
+      type: GET_MENUS,
+      payload: menuData,
+    })
+  } catch (err) {
     dispatch({
-      type: 'GET_MENU',
-      payload: data,
-    });
-  })
-  .catch(error => {
-    throw (error);
-  });
+      err,
+    })
+  }
+}
 
-  export const changeFilter = filter => ({
+export const getMenu = (id) => async (dispatch) => {
+  try {
+    const res = await axios.get(
+      `https://www.themealdb.com/api/json/v1/1/categories.php/${id}`
+    )
+    dispatch({
+      type: GET_MENU,
+      payload: res.data,
+    })
+  } catch (err) {
+    dispatch({
+      err,
+    })
+  }
+}
+
+export const changeFilter = (filter) => ({
   type: CHANGE_FILTER,
   filter,
-});
+})
