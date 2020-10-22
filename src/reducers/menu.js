@@ -1,8 +1,8 @@
-import { GET_MENUS, GET_MENU } from '../constants/actionTypes'
+import { GET_MENUS, GET_MENU, SEARCH_BY_LETTER, LOADING } from '../constants/actionTypes'
 const initialState = {
   menus: [],
-  menu: {},
-  loading: true,
+  menu: [],
+  loading: false,
 }
 
 export default function (state = initialState, action) {
@@ -18,6 +18,17 @@ export default function (state = initialState, action) {
         ...state,
         menu: action.payload,
         loading: false,
+      }
+    case SEARCH_BY_LETTER:
+      return {
+        ...state,
+        recipes: action.payload.data.meals,
+        loading: false,
+      }
+    case LOADING:
+      return {
+        ...state,
+        loading: true,
       }
     default:
       return state
