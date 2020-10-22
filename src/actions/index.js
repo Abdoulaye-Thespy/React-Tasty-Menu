@@ -4,13 +4,13 @@ import { GET_MENUS, GET_MENU, CHANGE_FILTER, LOADING, SEARCH_BY_LETTER } from '.
 
 // const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
 export const getMenus = () => (dispatch) => {
-  const lettersResult = [];
+  const lettersResult = []
 
   letters.map((letter) => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
       .then((res) => {
-        lettersResult.push(...res.data.meals);
+        Array.prototype.push.apply(lettersResult,res.data.meals);
       })
       .then(() => {
         dispatch({

@@ -1,6 +1,6 @@
 import { GET_MENUS, GET_MENU, SEARCH_BY_LETTER, LOADING } from '../constants/actionTypes'
 const initialState = {
-  menus: [],
+  menus: ['a'],
   menu: [],
   loading: false,
 }
