@@ -18,7 +18,7 @@ const Menu = ({menu}) => {
          {/* <p>{strCategoryDescription}</p> */}
          <Link to={{pathname:`/menu/${idMeal}`, state: menu}}
          key={idMeal}
-          className='btn btn-primary btn-details'>
+          className='btn btn-info btn-details'>
            details
          </Link>
        </div>

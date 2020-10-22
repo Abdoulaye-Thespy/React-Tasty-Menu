@@ -11,7 +11,7 @@ const MenuList = ({ getTheMenus, menus, filterMenu }) => {
   }, [getTheMenus])
 
   const handleFilterChange = (value) =>
-    (value.toLowerCase() === 'b' ? getTheMenus() : filterMenu(value))
+    (value.toLowerCase() === 'all' ? getTheMenus() : filterMenu(value))
 
 
   return menus === null ? (

@@ -19,13 +19,13 @@ function Menu({ getMenu, menu, match }) {
     <h1>Loading...</h1>
   ) : (
     <div className='container'>
+      <h1 className='mb-4 text-center'>{menu.strMeal}</h1>
       <div className='row'>
         <div className='col-md-6 card card-body'>
           <img src={menu.strMealThumb} alt='' />
         </div>
-        
+
         <div className='col-md-6 '>
-          <h1 className='mb-4 text-center'>{menu.strMeal}</h1>
           <h2>Ingredients</h2>
           <ul className='ingredients'>
             <li className='item'>
@@ -61,7 +61,9 @@ function Menu({ getMenu, menu, match }) {
         </div>
       </div>
       <Link to='/' className='text-center'>
-        <button type='button'>Back to Menu</button>
+        <button type='button' className='btn btn-primary btn-details'>
+          Back to Menu
+        </button>
       </Link>
     </div>
   )
