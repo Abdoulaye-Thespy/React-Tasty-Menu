@@ -16,7 +16,7 @@ function App() {
         </div>
         <Switch>
           <Route exact path='/' component={MenuList} />
-          <Route exact path='/:id' component={ShowMenu} />
+          <Route exact path='/menu/:id' component={ShowMenu} />
         </Switch>
       </div>
     </Router>

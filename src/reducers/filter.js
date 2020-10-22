@@ -1,5 +1,5 @@
 import { CHANGE_FILTER } from '../constants/actionTypes'
-const changeFilter = (state = 'ALL', action) => {
+const changeFilter = (state = 'b', action) => {
   switch (action.type) {
     case CHANGE_FILTER:
       return action.filter

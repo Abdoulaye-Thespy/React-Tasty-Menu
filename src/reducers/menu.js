@@ -1,6 +1,6 @@
 import { GET_MENUS, GET_MENU, SEARCH_BY_LETTER, LOADING } from '../constants/actionTypes'
 const initialState = {
-  menus: ['a'],
+  menus: [],
   menu: [],
   loading: false,
 }
@@ -22,7 +22,7 @@ export default function (state = initialState, action) {
     case SEARCH_BY_LETTER:
       return {
         ...state,
-        recipes: action.payload.data.meals,
+        menus: action.payload.data.meals,
         loading: false,
       }
     case LOADING:

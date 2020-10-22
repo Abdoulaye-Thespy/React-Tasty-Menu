@@ -5,13 +5,13 @@ import LetterFilter from './letterFilter'
 import { getMenus,searchMenu } from '../actions/index'
 import Menu from '../components/menu';
 
-const MenuList = ({ getMenus, menus, filterMenu }) => {
+const MenuList = ({ getTheMenus, menus, filterMenu }) => {
   useEffect(() => {
-    getMenus()
-  }, [getMenus])
+    getTheMenus()
+  }, [getTheMenus])
 
   const handleFilterChange = (value) =>
-    value.toLowerCase() === 'all' ? getMenus() : filterMenu(value)
+    (value.toLowerCase() === 'b' ? getTheMenus() : filterMenu(value))
 
 
   return menus === null ? (
@@ -35,7 +35,7 @@ const MenuList = ({ getMenus, menus, filterMenu }) => {
 
 MenuList.propTypes = {
   menus: PropTypes.arrayOf(PropTypes.object).isRequired,
-  getMenus: PropTypes.func.isRequired,
+  getTheMenus: PropTypes.func.isRequired,
   filterMenu: PropTypes.func.isRequired,
 }
 
@@ -45,7 +45,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getMenus: () => dispatch(getMenus()),
+  getTheMenus: () => dispatch(getMenus()),
   filterMenu: letter => dispatch(searchMenu(letter)),
 })
 

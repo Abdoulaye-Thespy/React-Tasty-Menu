@@ -31,13 +31,13 @@ export const searchMenu = (letter) => async (dispatch) => {
   })
 }
 
-export const getMenu = (id) => (dispatch) => {
-  axios
-  .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-  .then(response => dispatch({
+export const getMenu = (id) => async(dispatch) => {
+  const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+  console.log(res)
+  dispatch({
     type: GET_MENU,
-    payload: response.data.meals[0],
-  }));
+    payload: res.data.meals[0],
+  });
 };
 
 export  const setLoading = () => ({

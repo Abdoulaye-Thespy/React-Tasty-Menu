@@ -12,10 +12,13 @@ const Menu = ({menu}) => {
          <img src={strMealThumb} alt='image' />
        </div>
        <div className='cocktail-footer'>
+ <h2>{strMeal}</h2>
          <h3>{strCategory}</h3>
- <h4>{strArea}</h4>
+ {/* <h4>{strArea}</h4> */}
          {/* <p>{strCategoryDescription}</p> */}
-         <Link to={`/menu/${idMeal}`} className='btn btn-primary btn-details'>
+         <Link to={{pathname:`/menu/${idMeal}`, state: menu}}
+         key={idMeal}
+          className='btn btn-primary btn-details'>
            details
          </Link>
        </div>
