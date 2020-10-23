@@ -15,7 +15,7 @@ function LetterFilter({handleChange}) {
    }} >
 <option value="All">ALL</option>
 {letters.map(e => (
- <option value={e} key={e}></option>
+ <option value={e} key={e}>{e}</option>
 ))}
    </select>
   </div>
