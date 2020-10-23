@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react'
-import PropTypes from 'prop-types'
+import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import LetterFilter from './letterFilter'
-import { getMenus,searchMenu } from '../actions/index'
+import LetterFilter from './letterFilter';
+import { getMenus,searchMenu } from '../actions/index';
 import Menu from '../components/menu';
 
 const MenuList = ({ getTheMenus, menus, filterMenu }) => {
@@ -11,7 +11,7 @@ const MenuList = ({ getTheMenus, menus, filterMenu }) => {
   }, [getTheMenus])
 
   const handleFilterChange = (value) =>
-    (value.toLowerCase() === 'all' ? getTheMenus() : filterMenu(value))
+    (value.toLowerCase() === 'b' ? getTheMenus() : filterMenu(value))
 
 
   return menus === null ? (
