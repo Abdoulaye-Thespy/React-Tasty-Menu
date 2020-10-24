@@ -1,68 +1,69 @@
 import axios from 'axios';
-import letters, {DefaultLetter}  from './allLetters';
-import { GET_MENUS, GET_MENU, CHANGE_FILTER, LOADING, SEARCH_BY_LETTER } from '../constants/actionTypes'
+import letters, { DefaultLetter } from './allLetters';
+import {
+  GET_MENUS, GET_MENU, CHANGE_FILTER, LOADING, SEARCH_BY_LETTER,
+} from '../constants/actionTypes';
 
-export const getDefaultMenus = () => (dispatch) => {
-  const lettersResult = []
+export const getDefaultMenus = () => dispatch => {
+  const lettersResult = [];
 
-  DefaultLetter.map((letter) => {
+  DefaultLetter.forEach(letter => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
-      .then((res) => {
-        Array.prototype.push.apply(lettersResult, res.data.meals)
+      .then(res => {
+        Array.prototype.push.apply(lettersResult, res.data.meals);
       })
       .then(() => {
         dispatch({
           type: GET_MENUS,
           payload: lettersResult,
-        })
-      })
-  })
-}
+        });
+      });
+  });
+};
 
 // const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
-export const getMenus = () => (dispatch) => {
-  const lettersResult = []
+export const getMenus = () => dispatch => {
+  const lettersResult = [];
 
-  letters.map((letter) => {
+  letters.forEach(letter => {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`)
-      .then((res) => {
-        Array.prototype.push.apply(lettersResult,res.data.meals);
+      .then(res => {
+        Array.prototype.push.apply(lettersResult, res.data.meals);
       })
       .then(() => {
         dispatch({
           type: GET_MENUS,
           payload: lettersResult,
-        })
-      })
-  })
-}
+        });
+      });
+  });
+};
 
-export const searchMenu = (letter) => async (dispatch) => {
+export const searchMenu = letter => async dispatch => {
   const data = await axios.get(
-    `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`
-  )
+    `https://www.themealdb.com/api/json/v1/1/search.php?f=${letter}`,
+  );
   dispatch({
     type: SEARCH_BY_LETTER,
     payload: data,
-  })
-}
+  });
+};
 
-export const getMenu = (id) => async(dispatch) => {
-  const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
-  console.log(res)
+export const getMenu = id => async dispatch => {
+  const res = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
   dispatch({
     type: GET_MENU,
     payload: res.data.meals[0],
   });
 };
 
-export  const setLoading = () => ({
+export const setLoading = () => ({
   type: LOADING,
-})
+});
 
-export const changeFilter = (filter) => ({
+export const changeFilter = filter => ({
   type: CHANGE_FILTER,
   filter,
-})
+});

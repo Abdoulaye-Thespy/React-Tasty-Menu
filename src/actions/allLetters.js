@@ -25,10 +25,10 @@ const Letters = [
   'x',
   'y',
   'z',
-]
+];
 
 export const DefaultLetter = [
   'b',
-] 
+];
 
 export default Letters;
