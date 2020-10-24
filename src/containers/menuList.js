@@ -10,7 +10,7 @@ const MenuList = ({
 }) => {
   useEffect(() => {
     getDefaultMenus();
-  }, [getTheMenus]);
+  }, [getDefaultMenus]);
 
   const handleFilterChange = value => (value.toLowerCase() === 'all' ? getTheMenus() : filterMenu(value));
 

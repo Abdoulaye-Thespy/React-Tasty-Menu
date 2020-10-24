@@ -10,7 +10,7 @@ function Menu({ getMenu, menu, match }) {
   useEffect(() => {
     const { id } = match.params;
     getMenu(id);
-  }, []);
+  }, [getMenu]);
 
   return Object.entries(menu).length === 0 ? (
     <h1>Loading...</h1>
@@ -85,7 +85,7 @@ function Menu({ getMenu, menu, match }) {
         </div>
       </div>
       <Link to="/" className="text-center">
-        <button type="button" className="btn btn-primary btn-details">
+        <button type="button" className="btn btn-info btn-details">
           Back to Menu
         </button>
       </Link>
