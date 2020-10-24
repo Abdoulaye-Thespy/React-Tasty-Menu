@@ -1,4 +1,4 @@
-// eslint-disable-import/extensions
+// eslint-disable-next-line import/extensions
 
 import React from 'react';
 import {
