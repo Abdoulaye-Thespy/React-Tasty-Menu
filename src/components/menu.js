@@ -9,15 +9,14 @@ const Menu = ({ menu }) => {
   } = menu;
   return (
     <>
-      <article className="cocktail">
+      <article className="meal">
         <div className="img-container">
           <img src={strMealThumb} alt={strMeal} />
         </div>
-        <div className="cocktail-footer">
+        <div className="meal-footer">
           <h2>{strMeal}</h2>
           <h3>{strCategory}</h3>
-          {/* <h4>{strArea}</h4> */}
-          {/* <p>{strCategoryDescription}</p> */}
+          
           <Link
             to={{ pathname: `/menu/${idMeal}`, state: menu }}
             key={idMeal}
