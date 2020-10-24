@@ -22,7 +22,6 @@ export const getDefaultMenus = () => dispatch => {
   });
 };
 
-// const apiUrl = 'https://www.themealdb.com/api/json/v1/1/categories.php'
 export const getMenus = () => dispatch => {
   const lettersResult = [];
 

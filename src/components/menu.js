@@ -16,7 +16,7 @@ const Menu = ({ menu }) => {
         <div className="meal-footer">
           <h2>{strMeal}</h2>
           <h3>{strCategory}</h3>
-          
+
           <Link
             to={{ pathname: `/menu/${idMeal}`, state: menu }}
             key={idMeal}
