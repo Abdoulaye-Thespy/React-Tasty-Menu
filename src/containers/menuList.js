@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import LetterFilter from './letterFilter';
-import { getMenus,searchMenu } from '../actions/index';
+import { getMenus,searchMenu,getDefaultMenus } from '../actions/index';
 import Menu from '../components/menu';
 
-const MenuList = ({ getTheMenus, menus, filterMenu }) => {
+const MenuList = ({ getTheMenus, menus, filterMenu, getDefaultMenus }) => {
   useEffect(() => {
-    getTheMenus()
+    getDefaultMenus()
   }, [getTheMenus])
 
   const handleFilterChange = (value) =>
@@ -47,6 +47,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getTheMenus: () => dispatch(getMenus()),
   filterMenu: letter => dispatch(searchMenu(letter)),
+  getDefaultMenus: () => dispatch(getDefaultMenus()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuList)

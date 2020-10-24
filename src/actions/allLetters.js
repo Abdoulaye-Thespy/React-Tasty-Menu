@@ -27,4 +27,8 @@ const Letters = [
   'z',
 ]
 
+export const DefaultLetter = [
+  'b',
+] 
+
 export default Letters;
