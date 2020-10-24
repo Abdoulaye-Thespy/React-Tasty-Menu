@@ -140,4 +140,4 @@ export function unregister() {
       });
   }
 }
-/* eslint-disable*/
+/* eslint-enable*/

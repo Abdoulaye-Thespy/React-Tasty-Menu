@@ -1,3 +1,5 @@
+  // eslint-disable-import/extensions
+
 import React from 'react';
 import {
   BrowserRouter as Router, Route, Switch,
