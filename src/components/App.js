@@ -4,7 +4,7 @@ import React from 'react';
 import {
   BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
-import MenuList from '../containers/MenuList';
+import MenuList from '../containers/menuList';
 import ShowMenu from '../containers/ShowMenu';
 import Navbar from './Navbar';
 
