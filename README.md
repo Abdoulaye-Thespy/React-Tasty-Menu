@@ -10,6 +10,7 @@ Tasty-Menu is a React web application that retrieves data from 'The Meal DB' API
 
 ## Video Presentation
 (https://www.loom.com/share/d93d78b9447c49c9a269bba8bf7d8693)
+Second video: (https://www.loom.com/share/5a70f6ed79224b6f81d277cd6456f3a3)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
