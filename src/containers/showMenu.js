@@ -10,7 +10,7 @@ function Menu({ getMenu, menu, match }) {
   useEffect(() => {
     const { id } = match.params;
     getMenu(id);
-  }, [getMenu,match.params]);
+  }, [getMenu, match.params]);
 
   return Object.entries(menu).length === 0 ? (
     <h1>Loading...</h1>
