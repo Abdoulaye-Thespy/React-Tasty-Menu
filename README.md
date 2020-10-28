@@ -1,13 +1,16 @@
 # React-Tasty-Menu
-Tasty-Menu is a React web application where you can navigate the details of the different food items by clicking on the list on the menu. It has the filter functionality with which you can filter your food with different categories.
+Tasty-Menu is a React web application that retrieves data from 'The Meal DB' API. A visitor can select the food menu by choosing any letter from the dropdown and can also view the full details of each meal by clicking on the details. It is built using React/Redux.
 
 ## snapshot
-![Tasty-Menu]()
+![Tasty-Menu](snapshot.png)
+![Tasty-Menu](snapshot2.PNG)
 
 ## live demo
-[Tasty-Menu app]()
+[Tasty-Menu app](https://infallible-blackwell-869250.netlify.app/)
 
 ## Video Presentation
+(https://www.loom.com/share/d93d78b9447c49c9a269bba8bf7d8693)
+Second video: (https://www.loom.com/share/5a70f6ed79224b6f81d277cd6456f3a3)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -18,7 +21,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - You can navigate back to the home page by clicking on the button below.
 
 ## Potential Features
-- Search meal by name.
+- Search Form by letter.
 
 
 ## Built with
